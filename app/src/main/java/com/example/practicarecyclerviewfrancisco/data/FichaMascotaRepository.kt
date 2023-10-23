@@ -1,5 +1,7 @@
 package com.example.practicarecyclerviewfrancisco.data
 
+import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+
 class FichaMascotaRepository {
     companion object{
         val fichaMascotaList = listOf<FichaMascota>(
@@ -8,7 +10,7 @@ class FichaMascotaRepository {
                 "juan@mail.com",
                 "87646413",
                 "Max",
-                1,
+                "Perro",
                 false,
                 true,
                 5f
@@ -18,7 +20,7 @@ class FichaMascotaRepository {
                 "ale@mail.com",
                 "65432101",
                 "Simba",
-                2,
+                "Gato",
                 true,
                 true,
                 8.5f
@@ -28,11 +30,12 @@ class FichaMascotaRepository {
                 "pepe@mail.com",
                 "648325432",
                 "Luna",
-                2,
+                "Gato",
                 false,
                 false,
                 2f
             )
         )
     }
+
 }
