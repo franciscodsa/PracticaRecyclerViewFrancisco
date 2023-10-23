@@ -15,3 +15,15 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 Ü
 Vapp/src/main/java/com/example/practicarecyclerviewfrancisco/ui/DetalleFichaActivity.kt,b\b\bbc95d733db80d1ff58507571aec7aa833904e6d
+w
+G.idea/sonarlint/issuestore/e/0/e03cb59519b3245c9a2b0db87dedc54d94f224ea,f\1\f17e12d7008d7509c2547c8bbc67c0d94a24201e
+w
+G.idea/sonarlint/issuestore/b/b/bbc95d733db80d1ff58507571aec7aa833904e6d,6\3\63dd71a9adb62a5ac2be9c7f20030f1b08194aff
+w
+G.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,3\2\32813322c99a6c8a141ab2dc12bc10af3425f1b4
+Å
+Q.idea/sonarlint/securityhotspotstore/b/b/bbc95d733db80d1ff58507571aec7aa833904e6d,a\5\a56ff8b05cd53863593acbe0b1e93999fd0a3098
+Å
+Q.idea/sonarlint/securityhotspotstore/e/0/e03cb59519b3245c9a2b0db87dedc54d94f224ea,6\1\614b528ca8d383c2286c156c5da36e7102a3199e
+Å
+Q.idea/sonarlint/securityhotspotstore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,1\f\1fe398aa86b382486ed27d0a69bf92f68bd5edaa

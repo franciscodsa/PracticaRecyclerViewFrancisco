@@ -39,7 +39,7 @@ android {
         viewBinding true
     }
 }
-
+//TODO("RECUERDA ELIMINAR LAS DEPENDENCIAS QUE NO USES AL TERMINAR")
 dependencies {
     def moshi_version="1.14.0"
 
