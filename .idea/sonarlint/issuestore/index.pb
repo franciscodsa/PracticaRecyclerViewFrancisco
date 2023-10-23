@@ -13,3 +13,5 @@ Napp/src/main/java/com/example/practicarecyclerviewfrancisco/ui/FichaAdapter.kt
 Vapp/src/main/java/com/example/practicarecyclerviewfrancisco/data/model/FichaMascota.kt,e\0\e03cb59519b3245c9a2b0db87dedc54d94f224ea
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+†
+Vapp/src/main/java/com/example/practicarecyclerviewfrancisco/ui/DetalleFichaActivity.kt,b\b\bbc95d733db80d1ff58507571aec7aa833904e6d
