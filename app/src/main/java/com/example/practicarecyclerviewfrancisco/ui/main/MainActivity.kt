@@ -1,13 +1,14 @@
-package com.example.practicarecyclerviewfrancisco.ui
+package com.example.practicarecyclerviewfrancisco.ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.practicarecyclerviewfrancisco.data.FichaMascotaRepository
 import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
 import com.example.practicarecyclerviewfrancisco.databinding.ActivityMainBinding
+import com.example.practicarecyclerviewfrancisco.ui.detalle.DetalleFichaActivity
+import com.example.practicarecyclerviewfrancisco.ui.adapter.FichaAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,9 +31,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onItemSelected(fichaMascota: FichaMascota){
-        /*Toast.makeText(this, fichaMascota.especie, Toast.LENGTH_SHORT).show()*/
         val intent = Intent(this, DetalleFichaActivity::class.java)
-         startActivity(intent)
+        intent.putExtra("selectedFicha", fichaMascota)
+        startActivity(intent)
     }
 
 }

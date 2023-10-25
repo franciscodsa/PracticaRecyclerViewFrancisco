@@ -1,4 +1,4 @@
-package com.example.practicarecyclerviewfrancisco.ui
+package com.example.practicarecyclerviewfrancisco.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

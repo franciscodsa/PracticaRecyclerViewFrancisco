@@ -38,5 +38,85 @@
     "esterilizado": true,
     "vacunado": true,
     "comportamiento": 8.5
+  },
+  {
+    "nombre": "Ana",
+    "email": "ana@mail.com",
+    "telefono": "123456789",
+    "nombre_mascota": "Coco",
+    "tipo_mascota": "Perro",
+    "esterilizado": true,
+    "vacunado": true,
+    "comportamiento": 7.0
+  },
+  {
+    "nombre": "María",
+    "email": "maria@mail.com",
+    "telefono": "987654321",
+    "nombre_mascota": "Misty",
+    "tipo_mascota": "Gato",
+    "esterilizado": false,
+    "vacunado": true,
+    "comportamiento": 6.5
+  },
+  {
+    "nombre": "Luis",
+    "email": "luis@mail.com",
+    "telefono": "987654123",
+    "nombre_mascota": "Rocky",
+    "tipo_mascota": "Perro",
+    "esterilizado": true,
+    "vacunado": false,
+    "comportamiento": 4.0
+  },
+  {
+    "nombre": "Isabel",
+    "email": "isabel@mail.com",
+    "telefono": "789123456",
+    "nombre_mascota": "Whiskers",
+    "tipo_mascota": "Gato",
+    "esterilizado": true,
+    "vacunado": true,
+    "comportamiento": 6.0
+  },
+  {
+    "nombre": "Diego",
+    "email": "diego@mail.com",
+    "telefono": "654987321",
+    "nombre_mascota": "Buddy",
+    "tipo_mascota": "Perro",
+    "esterilizado": false,
+    "vacunado": true,
+    "comportamiento": 5.5
+  },
+  {
+    "nombre": "Laura",
+    "email": "laura@mail.com",
+    "telefono": "123789456",
+    "nombre_mascota": "Fluffy",
+    "tipo_mascota": "Gato",
+    "esterilizado": true,
+    "vacunado": false,
+    "comportamiento": 4.5
+  },
+  {
+    "nombre": "Carlos",
+    "email": "carlos@mail.com",
+    "telefono": "456321789",
+    "nombre_mascota": "Maximus",
+    "tipo_mascota": "Perro",
+    "esterilizado": true,
+    "vacunado": true,
+    "comportamiento": 7.5
+  },
+  {
+    "nombre": "Marcela",
+    "email": "marcela@mail.com",
+    "telefono": "987654789",
+    "nombre_mascota": "Princess",
+    "tipo_mascota": "Gato",
+    "esterilizado": false,
+    "vacunado": false,
+    "comportamiento": 3.5
   }
 ]
