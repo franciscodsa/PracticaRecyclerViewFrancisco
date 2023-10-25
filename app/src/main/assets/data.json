@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "Juan",
+    "email": "juan@mail.com",
+    "telefono": "87646413",
+    "nombre_mascota": "Max",
+    "tipo_mascota": "Perro",
+    "esterilizado": false,
+    "vacunado": true,
+    "comportamiento": 5.0
+  },
+  {
+    "nombre": "Pepe",
+    "email": "pepe@mail.com",
+    "telefono": "648325432",
+    "nombre_mascota": "Luna",
+    "tipo_mascota": "Gato",
+    "esterilizado": false,
+    "vacunado": false,
+    "comportamiento": 2.0
+  },
+  {
+    "nombre": "Alejandro",
+    "email": "ale@mail.com",
+    "telefono": "65432101",
+    "nombre_mascota": "Simba",
+    "tipo_mascota": "Gato",
+    "esterilizado": true,
+    "vacunado": true,
+    "comportamiento": 8.5
+  },
+  {
+    "nombre": "Fernando",
+    "email": "fer@mail.com",
+    "telefono": "796210634",
+    "nombre_mascota": "Timon",
+    "tipo_mascota": "Perro",
+    "esterilizado": true,
+    "vacunado": true,
+    "comportamiento": 8.5
+  }
+]

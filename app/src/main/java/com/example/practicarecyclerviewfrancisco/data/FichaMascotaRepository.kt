@@ -1,41 +1,43 @@
 package com.example.practicarecyclerviewfrancisco.data
 
 import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import java.io.InputStream
+import java.lang.reflect.Type
 
-class FichaMascotaRepository {
+class FichaMascotaRepository (file : InputStream? = null){
+
     companion object{
-        val fichaMascotaList = listOf<FichaMascota>(
-            FichaMascota(
-                "Juan",
-                "juan@mail.com",
-                "87646413",
-                "Max",
-                "Perro",
-                false,
-                true,
-                5f
-            ),
-            FichaMascota(
-                "Alejandro",
-                "ale@mail.com",
-                "65432101",
-                "Simba",
-                "Gato",
-                true,
-                true,
-                8.5f
-            ),
-            FichaMascota(
-                "Pepe",
-                "pepe@mail.com",
-                "648325432",
-                "Luna",
-                "Gato",
-                false,
-                false,
-                2f
-            )
-        )
+        private val fichaMascotaList = mutableListOf<FichaMascota>()
     }
+
+    init {
+        if (fichaMascotaList.size == 0){
+            val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
+
+            val listOfCardsType : Type = Types.newParameterizedType(
+                MutableList::class.java,
+                FichaMascota::class.java
+            )
+            val fichaMascota = file?.bufferedReader()?.readText()?.let { contenidoFichero -> moshi.adapter<List<FichaMascota>>(listOfCardsType).fromJson(contenidoFichero) }
+
+            fichaMascota?.let { fichaMascotaList.addAll(it) }
+        }
+    }
+
+    fun getFichaMascotaList() : List<FichaMascota>{
+        return fichaMascotaList
+    }
+
+    fun getFicha(id : Int) : FichaMascota{
+        return fichaMascotaList[id]
+    }
+
+    fun addFicha(fichaMascota: FichaMascota){
+        fichaMascotaList.add(fichaMascota)
+    }
+
 
 }
