@@ -32,8 +32,10 @@ class MainActivity : AppCompatActivity() {
 
     fun onItemSelected(fichaMascota: FichaMascota){
         val intent = Intent(this, DetalleFichaActivity::class.java)
-        intent.putExtra("selectedFicha", fichaMascota)
+        intent.putExtra("selectedFicha", fichaMascota.id)
         startActivity(intent)
     }
+
+    //TODO("hay que agregar onResume para implemetar el cambiar lista para que cuando se elimine se actualice la lista")
 
 }

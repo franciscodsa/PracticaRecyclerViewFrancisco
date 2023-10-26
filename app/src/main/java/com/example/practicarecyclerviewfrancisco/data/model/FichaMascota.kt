@@ -6,6 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class FichaMascota(
+    val id: Int,
     @Json(name = "nombre")
     val propietario: String,
     val email: String,

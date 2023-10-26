@@ -1,13 +1,14 @@
 package com.example.practicarecyclerviewfrancisco.ui.detalle
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.data.FichaMascotaRepository
 import com.example.practicarecyclerviewfrancisco.databinding.DetalleFichaActivityBinding
+import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
+import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.ui.utils.StringProvider
 
 class DetalleFichaActivity: AppCompatActivity (){
@@ -16,7 +17,9 @@ class DetalleFichaActivity: AppCompatActivity (){
 
     private val viewModel: DetalleFichaViewModel by viewModels {
         DetalleFichaViewModelFactory(
-            StringProvider.instances(this)
+            StringProvider.instances(this),
+            GetFichaMascotaListUsecase(FichaMascotaRepository()),
+            GetFichaMascotaUsecase(FichaMascotaRepository())
         )
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,15 +29,25 @@ class DetalleFichaActivity: AppCompatActivity (){
 
             val intent : Intent = intent
 
-            val selectedFicha = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val fichaId = intent.getIntExtra("selectedFicha", 0)
+
+            viewModel.getFichaMascotaUsecase(fichaId)
+
+
+
+
+
+
+
+            /*val selectedFicha = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 intent.getParcelableExtra("selectedFicha", FichaMascota::class.java)
             } else {
-                TODO("VERSION.SDK_INT < TIRAMISU | Preguntar a oscar como quiere que lo hagamos")
+                TODO("hay que cambiar esto para que en lugar de coger el objeto y lo pinte tiene que usar un use case que recupere la ficha con un id o algo parecido")
             }
 
             if (selectedFicha != null) {
                 viewModel.mostrarFichaSeleccionada(selectedFicha)
-            }
+            }*/
 
 
 
