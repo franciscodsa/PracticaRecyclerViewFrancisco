@@ -4,18 +4,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.practicarecyclerviewfrancisco.data.FichaMascotaRepository
 import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.domain.usecases.AddFichaMascotaUsecase
+import com.example.practicarecyclerviewfrancisco.domain.usecases.DeleteFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaUsecase
-import com.example.practicarecyclerviewfrancisco.ui.utils.StringProvider
+import com.example.practicarecyclerviewfrancisco.domain.usecases.UpdateFichaMascotaUsecase
+import com.example.practicarecyclerviewfrancisco.ui.constants.ConstantesDetalle
 
 class DetalleFichaViewModel (
-    //TODO("Preguntar para que se usa ")
-    private val stringProvider: StringProvider,
     private val getFichaMascotaListUsecase: GetFichaMascotaListUsecase,
-    private val getFichaMascotaUseCase : GetFichaMascotaUsecase
-
+    private val getFichaMascotaUseCase : GetFichaMascotaUsecase,
+    private val addFichaMascotaUsecase: AddFichaMascotaUsecase,
+    private val deleteFichaMascotaUsecase: DeleteFichaMascotaUsecase,
+    private val updateFichaMascotaUsecase: UpdateFichaMascotaUsecase
 ): ViewModel() {
 
 
@@ -24,38 +26,57 @@ class DetalleFichaViewModel (
 
     val uiState : LiveData<DetalleFichaState> get() = _uiState
 
-    fun mostrarFichaSeleccionada(fichaMascota: FichaMascota){
-        _uiState.value = DetalleFichaState(fichaMascota = fichaMascota, mensaje = null)
+    fun getNextId() : Int{
+        val list = getFichaMascotaListUsecase.execute()
+        val maxId = list.maxByOrNull { it.id }?.id?:0
+        return maxId + 1
     }
 
-    fun getFichaMascotaUsecase(id : Int){
+    fun addFichaMascota(fichaMascota: FichaMascota){
+        addFichaMascotaUsecase.execute(fichaMascota)
+
+        _uiState.value = _uiState.value?.copy(mensaje = ConstantesDetalle.mensajeFichaAdded )
+    }
+
+    fun deleteFichaMascota(id: Int){
+
+        deleteFichaMascotaUsecase.excute(id)
+
+        _uiState.value = DetalleFichaState(mensaje = ConstantesDetalle.mensajeFichaEliminada)
+    }
+
+    fun getFichaMascota(id : Int){
         val fichaMascota = getFichaMascotaUseCase.execute(id)
 
         _uiState.value = DetalleFichaState(fichaMascota = fichaMascota, mensaje = null)
+    }
 
+    fun updeateFicha(fichamascotaUpdated : FichaMascota) {
+        updateFichaMascotaUsecase.execute(fichamascotaUpdated)
+        _uiState.value = DetalleFichaState(fichaMascota = fichamascotaUpdated, mensaje = ConstantesDetalle.mensajeFichaActualizada)
     }
 
     fun mensajeMostrado(){
         _uiState.value = _uiState.value?.copy(mensaje = null)
     }
 
-
-
-
 }
 
 class DetalleFichaViewModelFactory(
-    private val stringProvider: StringProvider,
     private val getFichaMascotaListUsecase: GetFichaMascotaListUsecase,
-    private val getFichaMascotaUseCase : GetFichaMascotaUsecase
-
+    private val getFichaMascotaUseCase : GetFichaMascotaUsecase,
+    private val addFichaMascotaUsecase: AddFichaMascotaUsecase,
+    private val deleteFichaMascotaUsecase: DeleteFichaMascotaUsecase,
+    private val updateFichaMascotaUsecase: UpdateFichaMascotaUsecase
 ): ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetalleFichaViewModel::class.java)){
             @Suppress("UNCHECKED_CAST") return DetalleFichaViewModel(
-                stringProvider,
                 getFichaMascotaListUsecase,
-                getFichaMascotaUseCase
+                getFichaMascotaUseCase,
+                addFichaMascotaUsecase,
+                deleteFichaMascotaUsecase,
+                updateFichaMascotaUsecase
             )as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")

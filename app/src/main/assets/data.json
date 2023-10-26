@@ -1,5 +1,16 @@
 [
   {
+    "id": 0,
+    "nombre": "Leydy",
+    "email": "leydy@mail.com",
+    "telefono": "87646413",
+    "nombre_mascota": "Suzy",
+    "tipo_mascota": "Perro",
+    "esterilizado": false,
+    "vacunado": true,
+    "comportamiento": 5.0
+  },
+  {
     "id": 1,
     "nombre": "Juan",
     "email": "juan@mail.com",

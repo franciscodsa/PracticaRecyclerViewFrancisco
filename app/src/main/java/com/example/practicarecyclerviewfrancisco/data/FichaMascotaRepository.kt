@@ -31,12 +31,25 @@ class FichaMascotaRepository (file : InputStream? = null){
         return fichaMascotaList
     }
 
-    fun getFicha(id : Int) : FichaMascota{
-        return fichaMascotaList[id]
+    //TODO: enuentra otra manera de hacer esto que no sea ficha!!
+    fun getFicha(id: Int): FichaMascota {
+        val ficha = fichaMascotaList.find { it.id == id }
+        return ficha!!
     }
 
     fun addFicha(fichaMascota: FichaMascota){
         fichaMascotaList.add(fichaMascota)
+    }
+
+    fun deleteFicha(id : Int){
+        fichaMascotaList.removeAll{ ficha -> ficha.id == id}
+    }
+
+    fun updateFicha(fichaMascotaUpdated: FichaMascota){
+        val index = fichaMascotaList.indexOfFirst { ficha -> ficha.id == fichaMascotaUpdated.id }
+
+        if (index != -1) fichaMascotaList[index] = fichaMascotaUpdated
+
     }
 
 
