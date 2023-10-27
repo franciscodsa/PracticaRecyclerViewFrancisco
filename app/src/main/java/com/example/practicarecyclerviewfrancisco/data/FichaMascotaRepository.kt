@@ -33,8 +33,9 @@ class FichaMascotaRepository (file : InputStream? = null){
 
     //TODO: enuentra otra manera de hacer esto que no sea ficha!!
     fun getFicha(id: Int): FichaMascota {
-        val ficha = fichaMascotaList.find { it.id == id }
-        return ficha!!
+
+        return fichaMascotaList.find { it.id == id } ?: fichaMascotaList[0]
+
     }
 
     fun addFicha(fichaMascota: FichaMascota){

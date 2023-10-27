@@ -12,11 +12,7 @@ P
 w
 G.idea/sonarlint/issuestore/e/0/e03cb59519b3245c9a2b0db87dedc54d94f224ea,f\1\f17e12d7008d7509c2547c8bbc67c0d94a24201e
 w
-G.idea/sonarlint/issuestore/b/b/bbc95d733db80d1ff58507571aec7aa833904e6d,6\3\63dd71a9adb62a5ac2be9c7f20030f1b08194aff
-w
 G.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,3\2\32813322c99a6c8a141ab2dc12bc10af3425f1b4
-Å
-Q.idea/sonarlint/securityhotspotstore/b/b/bbc95d733db80d1ff58507571aec7aa833904e6d,a\5\a56ff8b05cd53863593acbe0b1e93999fd0a3098
 Å
 Q.idea/sonarlint/securityhotspotstore/e/0/e03cb59519b3245c9a2b0db87dedc54d94f224ea,6\1\614b528ca8d383c2286c156c5da36e7102a3199e
 Å
@@ -95,10 +91,6 @@ Q.idea/sonarlint/securityhotspotstore/8/9/892aa396c41bef0da0f7b45c25b2a88c77aa5b
 Q.idea/sonarlint/securityhotspotstore/f/2/f2c9f5ca7b34baa7d66832684553b679ffee3fb4,9\2\92efc4d5427173d08dc63cfaa87d1ea8a719567c
 é
 ^app/src/main/java/com/example/practicarecyclerviewfrancisco/ui/detalle/DetalleFichaActivity.kt,8\b\8bc00342e5757abec26a1bcb6b727d9890ffdfcf
-Ü
-Vapp/src/main/java/com/example/practicarecyclerviewfrancisco/ui/utils/StringProvider.kt,8\b\8b7294780f79b5b798f50429c3e0c7ac97b50614
-ã
-[app/src/main/java/com/example/practicarecyclerviewfrancisco/ui/detalle/DetalleFistaState.kt,d\3\d307d7dce8287d9c947175b22566bd1137edb1f4
 è
 _app/src/main/java/com/example/practicarecyclerviewfrancisco/ui/detalle/DetalleFichaViewModel.kt,6\b\6bc3b79e819cc6d93a56ae6e313a0615970fca06
 Ü
