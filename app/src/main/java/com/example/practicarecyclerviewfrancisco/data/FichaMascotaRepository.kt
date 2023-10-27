@@ -31,7 +31,7 @@ class FichaMascotaRepository (file : InputStream? = null){
         return fichaMascotaList
     }
 
-    //TODO: enuentra otra manera de hacer esto que no sea ficha!!
+    //TODO: enuentra otra manera de hacer esto que no sea ficha!!, puede ser como esta ahora o colocando una ficha vacia
     fun getFicha(id: Int): FichaMascota {
 
         return fichaMascotaList.find { it.id == id } ?: fichaMascotaList[0]
