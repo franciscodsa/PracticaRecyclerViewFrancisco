@@ -20,4 +20,5 @@
     <string name="maloComportamientoTxt">Malo</string>
     <string name="esterilizadoTxt">Esterilizado</string>
     <string name="vacunadoTxt">Vacunado</string>
+    <string name="imagen_de_la_mascota">Imagen de la mascota</string>
 </resources>

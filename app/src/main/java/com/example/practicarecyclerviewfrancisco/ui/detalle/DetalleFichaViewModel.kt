@@ -10,53 +10,54 @@ import com.example.practicarecyclerviewfrancisco.domain.usecases.DeleteFichaMasc
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.UpdateFichaMascotaUsecase
-import com.example.practicarecyclerviewfrancisco.ui.constants.ConstantesDetalle
 
-class DetalleFichaViewModel (
+class DetalleFichaViewModel(
     private val getFichaMascotaListUsecase: GetFichaMascotaListUsecase,
-    private val getFichaMascotaUseCase : GetFichaMascotaUsecase,
+    private val getFichaMascotaUseCase: GetFichaMascotaUsecase,
     private val addFichaMascotaUsecase: AddFichaMascotaUsecase,
     private val deleteFichaMascotaUsecase: DeleteFichaMascotaUsecase,
     private val updateFichaMascotaUsecase: UpdateFichaMascotaUsecase
-): ViewModel() {
-
+) : ViewModel() {
 
 
     private val _uiState = MutableLiveData<DetalleFichaState>()
 
-    val uiState : LiveData<DetalleFichaState> get() = _uiState
+    val uiState: LiveData<DetalleFichaState> get() = _uiState
 
-    fun getNextId() : Int{
+    fun getNextId(): Int {
         val list = getFichaMascotaListUsecase.execute()
-        val maxId = list.maxByOrNull { it.id }?.id?:0
+        val maxId = list.maxByOrNull { it.id }?.id ?: 0
         return maxId + 1
     }
 
-    fun addFichaMascota(fichaMascota: FichaMascota){
+    fun addFichaMascota(fichaMascota: FichaMascota) {
         addFichaMascotaUsecase.execute(fichaMascota)
 
-        _uiState.value = _uiState.value?.copy(mensaje = ConstantesDetalle.mensajeFichaAdded )
+        _uiState.value = _uiState.value?.copy(mensaje = ConstantesDetalle.mensajeFichaAdded)
     }
 
-    fun deleteFichaMascota(id: Int){
+    fun deleteFichaMascota(id: Int) {
 
         deleteFichaMascotaUsecase.excute(id)
 
         _uiState.value = DetalleFichaState(mensaje = ConstantesDetalle.mensajeFichaEliminada)
     }
 
-    fun getFichaMascota(id : Int){
+    fun getFichaMascota(id: Int) {
         val fichaMascota = getFichaMascotaUseCase.execute(id)
 
         _uiState.value = DetalleFichaState(fichaMascota = fichaMascota, mensaje = null)
     }
 
-    fun updeateFicha(fichamascotaUpdated : FichaMascota) {
+    fun updeateFicha(fichamascotaUpdated: FichaMascota) {
         updateFichaMascotaUsecase.execute(fichamascotaUpdated)
-        _uiState.value = DetalleFichaState(fichaMascota = fichamascotaUpdated, mensaje = ConstantesDetalle.mensajeFichaActualizada)
+        _uiState.value = DetalleFichaState(
+            fichaMascota = fichamascotaUpdated,
+            mensaje = ConstantesDetalle.mensajeFichaActualizada
+        )
     }
 
-    fun mensajeMostrado(){
+    fun mensajeMostrado() {
         _uiState.value = _uiState.value?.copy(mensaje = null)
     }
 
@@ -64,20 +65,20 @@ class DetalleFichaViewModel (
 
 class DetalleFichaViewModelFactory(
     private val getFichaMascotaListUsecase: GetFichaMascotaListUsecase,
-    private val getFichaMascotaUseCase : GetFichaMascotaUsecase,
+    private val getFichaMascotaUseCase: GetFichaMascotaUsecase,
     private val addFichaMascotaUsecase: AddFichaMascotaUsecase,
     private val deleteFichaMascotaUsecase: DeleteFichaMascotaUsecase,
     private val updateFichaMascotaUsecase: UpdateFichaMascotaUsecase
-): ViewModelProvider.Factory{
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(DetalleFichaViewModel::class.java)){
+        if (modelClass.isAssignableFrom(DetalleFichaViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST") return DetalleFichaViewModel(
                 getFichaMascotaListUsecase,
                 getFichaMascotaUseCase,
                 addFichaMascotaUsecase,
                 deleteFichaMascotaUsecase,
                 updateFichaMascotaUsecase
-            )as T
+            ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

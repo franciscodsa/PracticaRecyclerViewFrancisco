@@ -8,7 +8,8 @@
     "tipo_mascota": "Perro",
     "esterilizado": false,
     "vacunado": true,
-    "comportamiento": 5.0
+    "comportamiento": 5.0,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Berger_blanc_suisse3.jpg"
   },
   {
     "id": 1,
@@ -19,7 +20,8 @@
     "tipo_mascota": "Perro",
     "esterilizado": false,
     "vacunado": true,
-    "comportamiento": 5.0
+    "comportamiento": 5.0,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/59/Border_Collie_blanca_y_negra_Cachorra_%28Bimba_de_los_Baganicos%29.jpg"
   },
   {
     "id": 2,
@@ -30,7 +32,8 @@
     "tipo_mascota": "Gato",
     "esterilizado": false,
     "vacunado": false,
-    "comportamiento": 2.0
+    "comportamiento": 2.0,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/82/Cat_Eyes.jpg"
   },
   {
     "id": 3,
@@ -41,7 +44,8 @@
     "tipo_mascota": "Gato",
     "esterilizado": true,
     "vacunado": true,
-    "comportamiento": 8.5
+    "comportamiento": 8.5,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Gato_Siam%C3%A9s_ojos_azules.JPG"
   },
   {
     "id": 4,
@@ -52,7 +56,8 @@
     "tipo_mascota": "Perro",
     "esterilizado": true,
     "vacunado": true,
-    "comportamiento": 8.5
+    "comportamiento": 8.5,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/69/Berger-des-Pyrenees_Adeux_0565x0404.jpg"
   },
   {
     "id": 5,
@@ -63,19 +68,20 @@
     "tipo_mascota": "Perro",
     "esterilizado": true,
     "vacunado": true,
-    "comportamiento": 7.0
-  },
-  {
-    "id": 6,
-    "nombre": "María",
-    "email": "maria@mail.com",
-    "telefono": "987654321",
-    "nombre_mascota": "Misty",
-    "tipo_mascota": "Gato",
-    "esterilizado": false,
-    "vacunado": true,
-    "comportamiento": 6.5
-  },
+    "comportamiento": 7.0,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/10/GSD_Puppy.jpg"
+  },{
+  "id": 6,
+  "nombre": "María",
+  "email": "maria@mail.com",
+  "telefono": "987654321",
+  "nombre_mascota": "Misty",
+  "tipo_mascota": "Gato",
+  "esterilizado": false,
+  "vacunado": true,
+  "comportamiento": 6.5,
+  "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/25/Russian_blue_cat.jpg"
+},
   {
     "id": 7,
     "nombre": "Luis",
@@ -85,7 +91,8 @@
     "tipo_mascota": "Perro",
     "esterilizado": true,
     "vacunado": false,
-    "comportamiento": 4.0
+    "comportamiento": 4.0,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/67/Rassehund_Briard.jpg"
   },
   {
     "id": 8,
@@ -96,7 +103,8 @@
     "tipo_mascota": "Gato",
     "esterilizado": true,
     "vacunado": true,
-    "comportamiento": 6.0
+    "comportamiento": 6.0,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/b/bd/ACL_Pointocurl_Fiorentina.jpg"
   },
   {
     "id": 9,
@@ -107,7 +115,8 @@
     "tipo_mascota": "Perro",
     "esterilizado": false,
     "vacunado": true,
-    "comportamiento": 5.5
+    "comportamiento": 5.5,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/87/Polski_Owczarek_Podhalanski.jpg"
   },
   {
     "id": 10,
@@ -118,7 +127,8 @@
     "tipo_mascota": "Gato",
     "esterilizado": true,
     "vacunado": false,
-    "comportamiento": 4.5
+    "comportamiento": 4.5,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Turkse_angora.jpg"
   },
   {
     "id": 11,
@@ -129,7 +139,8 @@
     "tipo_mascota": "Perro",
     "esterilizado": true,
     "vacunado": true,
-    "comportamiento": 7.5
+    "comportamiento": 7.5,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Golden_Retriever_9-year_old.jpg"
   },
   {
     "id": 12,
@@ -140,6 +151,7 @@
     "tipo_mascota": "Gato",
     "esterilizado": false,
     "vacunado": false,
-    "comportamiento": 3.5
+    "comportamiento": 3.5,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Nagec_cat.jpg"
   }
 ]

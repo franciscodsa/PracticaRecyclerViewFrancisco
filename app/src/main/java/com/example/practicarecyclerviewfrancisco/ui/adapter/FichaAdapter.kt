@@ -4,12 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.practicarecyclerviewfrancisco.R
 import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
 import com.example.practicarecyclerviewfrancisco.databinding.ItemFichaBinding
+import com.example.practicarecyclerviewfrancisco.ui.commons.ConstantesUi
+import timber.log.Timber
+import java.io.IOException
 
 class FichaAdapter(
-    private var fichaMascotaList : List<FichaMascota>,
+    private var fichaMascotaList: List<FichaMascota>,
     private val onClickListener: (FichaMascota) -> Unit
 ) : RecyclerView.Adapter<FichaViewHolder>() {
 
@@ -26,20 +30,23 @@ class FichaAdapter(
         holder.render(fichaMascotaList[position], onClickListener)
     }
 
-    fun cambiarLista(lista: List<FichaMascota>) {
-        fichaMascotaList = lista
-        notifyDataSetChanged()
-    }
 }
 
-class FichaViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+class FichaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    val binding = ItemFichaBinding.bind(view)
-    fun render(fichaMascota: FichaMascota, onClickListener: (FichaMascota) -> Unit){
-        with(binding){
+    private val binding = ItemFichaBinding.bind(view)
+    fun render(fichaMascota: FichaMascota, onClickListener: (FichaMascota) -> Unit) {
+        with(binding) {
             tvNombrePropietario.text = fichaMascota.propietario
             tvNombreMascota.text = fichaMascota.nombreMascota
-            buttonMasInfo.setOnClickListener{
+            try {
+                ivMascota.load(fichaMascota.imagen)
+            } catch (e: IOException) {
+                ivMascota.load(ConstantesUi.defaultImage)
+                Timber.e(e, ConstantesUi.errorCargandoImagen)
+            }
+
+            buttonMasInfo.setOnClickListener {
                 onClickListener(fichaMascota)
             }
         }

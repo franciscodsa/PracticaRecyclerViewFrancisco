@@ -13,9 +13,9 @@ import com.example.practicarecyclerviewfrancisco.domain.usecases.DeleteFichaMasc
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.UpdateFichaMascotaUsecase
-import com.example.practicarecyclerviewfrancisco.ui.constants.ConstantesDetalle
+import com.example.practicarecyclerviewfrancisco.ui.commons.ConstantesUi
 
-class DetalleFichaActivity: AppCompatActivity (){
+class DetalleFichaActivity : AppCompatActivity() {
 
     private lateinit var binding: DetalleFichaActivityBinding
 
@@ -28,6 +28,7 @@ class DetalleFichaActivity: AppCompatActivity (){
             UpdateFichaMascotaUsecase(FichaMascotaRepository())
         )
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DetalleFichaActivityBinding.inflate(layoutInflater).apply {
@@ -44,7 +45,7 @@ class DetalleFichaActivity: AppCompatActivity (){
             }
 
             //Elimina la ficha que se esta mostrando
-            buttonDelete.setOnClickListener{
+            buttonDelete.setOnClickListener {
                 viewModel.deleteFichaMascota(getSelectedFichaId())
             }
 
@@ -55,11 +56,11 @@ class DetalleFichaActivity: AppCompatActivity (){
             }
 
 
-            viewModel.uiState.observe(this@DetalleFichaActivity){state ->
-                state.mensaje?.let{ mensaje ->
+            viewModel.uiState.observe(this@DetalleFichaActivity) { state ->
+                state.mensaje?.let { mensaje ->
                     Toast.makeText(this@DetalleFichaActivity, mensaje, Toast.LENGTH_SHORT).show()
                     viewModel.mensajeMostrado()
-                }?: run {
+                } ?: run {
                     editTextPropietario.setText(state.fichaMascota.propietario)
                     editTextEmail.setText(state.fichaMascota.email)
                     editTextPhone.setText(state.fichaMascota.telefono)
@@ -68,9 +69,10 @@ class DetalleFichaActivity: AppCompatActivity (){
                     checkBoxEsterilizado.isChecked = state.fichaMascota.esterilizado
                     checkBoxVacunado.isChecked = state.fichaMascota.vacunado
 
-                    //TODO("Preguntar si esto esta bien asi")
-                    radioGato.isChecked= state.fichaMascota.especie == ConstantesDetalle.especieGato
-                    radioPerro.isChecked= state.fichaMascota.especie == ConstantesDetalle.especiePerro
+                    radioGato.isChecked =
+                        state.fichaMascota.especie == ConstantesDetalle.especieGato
+                    radioPerro.isChecked =
+                        state.fichaMascota.especie == ConstantesDetalle.especiePerro
                 }
             }
 
@@ -79,18 +81,17 @@ class DetalleFichaActivity: AppCompatActivity (){
     }
 
 
-
-    private fun getSelectedFichaId () : Int{
+    private fun getSelectedFichaId(): Int {
         val intent: Intent = intent
 
-        val fichaId = intent.getIntExtra(ConstantesDetalle.intentName, 0)
+        val fichaId = intent.getIntExtra(ConstantesUi.intentName, 0)
 
         return fichaId
     }
 
 
     private fun createFichaMascotaFromInput(): FichaMascota {
-        with(binding){
+        with(binding) {
             val propietario = editTextPropietario.text.toString()
             val email = editTextEmail.text.toString()
             val telefono = editTextPhone.text.toString()
@@ -108,6 +109,7 @@ class DetalleFichaActivity: AppCompatActivity (){
 
             val id = if (buttonUpdate.isPressed) getSelectedFichaId() else viewModel.getNextId()
 
+            val imagen = ConstantesUi.defaultImage
 
             return FichaMascota(
                 id,
@@ -118,7 +120,8 @@ class DetalleFichaActivity: AppCompatActivity (){
                 especieSeleccionada,
                 esterilizado,
                 vacunado,
-                comportamiento
+                comportamiento,
+                imagen
             )
         }
 

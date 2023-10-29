@@ -11,6 +11,7 @@ import com.example.practicarecyclerviewfrancisco.databinding.ActivityMainBinding
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
 import com.example.practicarecyclerviewfrancisco.ui.detalle.DetalleFichaActivity
 import com.example.practicarecyclerviewfrancisco.ui.adapter.FichaAdapter
+import com.example.practicarecyclerviewfrancisco.ui.commons.ConstantesUi
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModels {
         MainViewModelFactory(
-            GetFichaMascotaListUsecase(FichaMascotaRepository(assets.open("data.json")))
+            GetFichaMascotaListUsecase(FichaMascotaRepository(assets.open(ConstantesUi.dataJson)))
         )
     }
 
@@ -28,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             setContentView(root)
 
             viewModel.getFichaMascotaList()
-
 
             viewModel.uiState.observe(this@MainActivity) { state ->
                 val fichaMascotaList = state.fichaMascotaList
@@ -44,11 +44,10 @@ class MainActivity : AppCompatActivity() {
 
     fun onItemSelected(fichaMascota: FichaMascota) {
         val intent = Intent(this, DetalleFichaActivity::class.java)
-        intent.putExtra("selectedFicha", fichaMascota.id)
+        intent.putExtra(ConstantesUi.intentName, fichaMascota.id)
         startActivity(intent)
     }
 
-    // TODO: preguntar si con esto vale
     override fun onResume() {
         super.onResume()
         viewModel.getFichaMascotaList()

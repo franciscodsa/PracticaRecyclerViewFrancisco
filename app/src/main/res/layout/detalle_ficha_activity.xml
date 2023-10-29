@@ -15,7 +15,6 @@
         android:hint="@string/nombreDelPropietario"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:minHeight="48dp"
         android:textColorHint="#8D6E63"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -24,25 +23,13 @@
 
 
     <Button
-        android:id="@+id/buttonAnterior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="@string/flechaIzquierda"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxVacunado"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
         android:id="@+id/buttonAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:text="@string/addButtonTxt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -53,7 +40,7 @@
         android:layout_gravity="bottom"
         android:text="@string/deleteButtonTxt"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -69,20 +56,6 @@
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/buttonSiguiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="@string/flechaDerecha"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDelete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/buttonAnterior"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxEsterilizado"
-        app:layout_constraintVertical_bias="1.0" />
-
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
@@ -91,7 +64,6 @@
         android:hint="@string/emailHint"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        android:minHeight="48dp"
         android:textColorHint="#8D6E63"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -161,8 +133,8 @@
         android:id="@+id/textViewComportamiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:text="@string/comportamientoTxt"
         app:layout_constraintBottom_toTopOf="@+id/sliderComportamiento"
         app:layout_constraintEnd_toEndOf="parent"

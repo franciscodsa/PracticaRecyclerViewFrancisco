@@ -67,7 +67,4 @@ dependencies {
 
     //Timber(para errores)
     implementation 'com.jakewharton.timber:timber:5.0.1'
-
-    //Lottie
-    implementation 'com.airbnb.android:lottie:5.2.0'
 }

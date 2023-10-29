@@ -11,10 +11,11 @@ class FichaMascotaRepository (file : InputStream? = null){
 
     companion object{
         private val fichaMascotaList = mutableListOf<FichaMascota>()
+        private val fichaMascotaVacia = FichaMascota(-1, "", "","", "", "", false, false, 0.0f, "")
     }
 
     init {
-        if (fichaMascotaList.size == 0){
+        if (fichaMascotaList.isEmpty()){
             val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
 
             val listOfCardsType : Type = Types.newParameterizedType(
@@ -31,11 +32,8 @@ class FichaMascotaRepository (file : InputStream? = null){
         return fichaMascotaList
     }
 
-    //TODO: enuentra otra manera de hacer esto que no sea ficha!!, puede ser como esta ahora o colocando una ficha vacia
     fun getFicha(id: Int): FichaMascota {
-
-        return fichaMascotaList.find { it.id == id } ?: fichaMascotaList[0]
-
+        return fichaMascotaList.find { it.id == id } ?: fichaMascotaVacia
     }
 
     fun addFicha(fichaMascota: FichaMascota){
@@ -50,7 +48,6 @@ class FichaMascotaRepository (file : InputStream? = null){
         val index = fichaMascotaList.indexOfFirst { ficha -> ficha.id == fichaMascotaUpdated.id }
 
         if (index != -1) fichaMascotaList[index] = fichaMascotaUpdated
-
     }
 
 

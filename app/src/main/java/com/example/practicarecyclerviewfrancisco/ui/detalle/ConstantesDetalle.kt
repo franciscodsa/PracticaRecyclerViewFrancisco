@@ -1,4 +1,4 @@
-package com.example.practicarecyclerviewfrancisco.ui.constants
+package com.example.practicarecyclerviewfrancisco.ui.detalle
 
 object ConstantesDetalle {
 
@@ -6,7 +6,6 @@ object ConstantesDetalle {
     const val especieGato = "Gato"
     const val especiePerro = "Perro"
     const val especieNoSeleccionada = "Ninguna especie seleccionada"
-    const val intentName = "selectedFicha"
 
     //View model
     const val mensajeFichaAdded = "Ficha añadida"
