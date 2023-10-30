@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.practicarecyclerviewfrancisco.R
-import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.domain.model.FichaMascota
 import com.example.practicarecyclerviewfrancisco.databinding.ItemFichaBinding
 import com.example.practicarecyclerviewfrancisco.ui.commons.ConstantesUi
 import timber.log.Timber

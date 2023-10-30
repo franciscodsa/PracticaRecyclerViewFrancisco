@@ -1,6 +1,6 @@
 package com.example.practicarecyclerviewfrancisco.data
 
-import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.domain.model.FichaMascota
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

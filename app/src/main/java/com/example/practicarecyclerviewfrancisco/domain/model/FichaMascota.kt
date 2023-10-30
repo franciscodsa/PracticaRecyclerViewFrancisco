@@ -1,20 +1,19 @@
-package com.example.practicarecyclerviewfrancisco.data.model
+package com.example.practicarecyclerviewfrancisco.domain.model
 
 import android.os.Parcelable
-import com.example.practicarecyclerviewfrancisco.data.ConstantesData
 import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class FichaMascota(
     val id: Int,
-    @Json(name = ConstantesData.NOMBRE_JSON)
+    @Json(name = Constantes.NOMBRE_JSON)
     val propietario: String,
     val email: String,
     val telefono: String,
-    @Json(name = ConstantesData.NOMBRE_MASCOTA_JSON)
+    @Json(name = Constantes.NOMBRE_MASCOTA_JSON)
     val nombreMascota: String,
-    @Json(name = ConstantesData.TIPO_MASCOTA_JSON)
+    @Json(name = Constantes.TIPO_MASCOTA_JSON)
     val especie: String,
     val esterilizado: Boolean = false,
     val vacunado: Boolean = false,

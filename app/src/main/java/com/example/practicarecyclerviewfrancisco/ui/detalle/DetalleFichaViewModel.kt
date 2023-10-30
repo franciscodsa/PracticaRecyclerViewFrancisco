@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.domain.model.FichaMascota
 import com.example.practicarecyclerviewfrancisco.domain.usecases.AddFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.DeleteFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
@@ -43,10 +43,14 @@ class DetalleFichaViewModel(
         _uiState.value = DetalleFichaState(mensaje = ConstantesDetalle.mensajeFichaEliminada)
     }
 
-    fun getFichaMascota(id: Int) {
+    fun mostrarFichaSeleccionada(id: Int) {
         val fichaMascota = getFichaMascotaUseCase.execute(id)
 
         _uiState.value = DetalleFichaState(fichaMascota = fichaMascota, mensaje = null)
+    }
+
+    fun getFichaMascota(id: Int): FichaMascota {
+        return getFichaMascotaUseCase.execute(id)
     }
 
     fun updeateFicha(fichamascotaUpdated: FichaMascota) {

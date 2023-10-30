@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practicarecyclerviewfrancisco.data.FichaMascotaRepository
-import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.domain.model.FichaMascota
 import com.example.practicarecyclerviewfrancisco.databinding.DetalleFichaActivityBinding
 import com.example.practicarecyclerviewfrancisco.domain.usecases.AddFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.DeleteFichaMascotaUsecase
@@ -36,7 +36,7 @@ class DetalleFichaActivity : AppCompatActivity() {
             viewModel
 
             //Muestra la ficha seleccionada en los campos
-            viewModel.getFichaMascota(getSelectedFichaId())
+            viewModel.mostrarFichaSeleccionada(getSelectedFichaId())
 
             //Actualiza la ficha que se esta mostrando
             buttonUpdate.setOnClickListener {
@@ -84,9 +84,7 @@ class DetalleFichaActivity : AppCompatActivity() {
     private fun getSelectedFichaId(): Int {
         val intent: Intent = intent
 
-        val fichaId = intent.getIntExtra(ConstantesUi.intentName, 0)
-
-        return fichaId
+        return intent.getIntExtra(ConstantesUi.intentName, 0)
     }
 
 
@@ -109,7 +107,8 @@ class DetalleFichaActivity : AppCompatActivity() {
 
             val id = if (buttonUpdate.isPressed) getSelectedFichaId() else viewModel.getNextId()
 
-            val imagen = ConstantesUi.defaultImage
+            val imagen =
+                if (buttonUpdate.isPressed) viewModel.getFichaMascota(getSelectedFichaId()).imagen else ConstantesUi.defaultImage
 
             return FichaMascota(
                 id,

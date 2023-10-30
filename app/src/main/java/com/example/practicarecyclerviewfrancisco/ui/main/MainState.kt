@@ -1,6 +1,6 @@
 package com.example.practicarecyclerviewfrancisco.ui.main
 
-import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.domain.model.FichaMascota
 
 class MainState(
     val fichaMascotaList: List<FichaMascota> = emptyList()

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.domain.model.FichaMascota
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
 
 class MainViewModel(
@@ -12,22 +12,25 @@ class MainViewModel(
 ) : ViewModel() {
     private val _uiState = MutableLiveData<MainState>()
 
-    val uiState : LiveData<MainState> get() = _uiState
+    val uiState: LiveData<MainState> get() = _uiState
 
-    fun getFichaMascotaList() : List<FichaMascota> {
+    fun getFichaMascotaList(): List<FichaMascota> {
+        return getFichaMascotaListUsecase.execute()
+    }
+
+    fun mostrarFichaMascotaList() {
         val fichaMascotalist = getFichaMascotaListUsecase.execute()
 
         _uiState.value = MainState(fichaMascotaList = fichaMascotalist)
-        return fichaMascotalist
     }
 
 }
 
 class MainViewModelFactory(
     private val getFichaMascotaListUsecase: GetFichaMascotaListUsecase
-): ViewModelProvider.Factory{
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(MainViewModel::class.java)){
+        if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST") return MainViewModel(
                 getFichaMascotaListUsecase
             ) as T

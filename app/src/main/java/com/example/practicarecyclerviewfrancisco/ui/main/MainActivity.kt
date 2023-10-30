@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.practicarecyclerviewfrancisco.data.FichaMascotaRepository
-import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
+import com.example.practicarecyclerviewfrancisco.domain.model.FichaMascota
 import com.example.practicarecyclerviewfrancisco.databinding.ActivityMainBinding
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
 import com.example.practicarecyclerviewfrancisco.ui.detalle.DetalleFichaActivity
@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
             recyclerFicha.layoutManager = LinearLayoutManager(this@MainActivity)
 
-            val fichaMascotaList = viewModel.getFichaMascotaList()
 
+            val fichaMascotaList = viewModel.getFichaMascotaList()
             adapter = FichaAdapter(fichaMascotaList, ::onItemSelected)
 
 
@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                 recyclerFicha.adapter = adapter
             }
         }
+
         viewModel.uiState.observe(this@MainActivity) { state ->
             val fichaMascotaList = state.fichaMascotaList
             adapter.cambiarLista(fichaMascotaList)
@@ -56,12 +57,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.getFichaMascotaList()
+        viewModel.mostrarFichaMascotaList()
     }
-
-    /*fun initRecyclerView(fichaMascotaList: List<FichaMascota>) {
-    binding.recyclerFicha.layoutManager = LinearLayoutManager(this)
-    binding.recyclerFicha.adapter =  }*/
 }
 
 
