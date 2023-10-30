@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.practicarecyclerviewfrancisco.data.model.FichaMascota
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaListUsecase
 
 class MainViewModel(
@@ -13,10 +14,11 @@ class MainViewModel(
 
     val uiState : LiveData<MainState> get() = _uiState
 
-    fun getFichaMascotaList(){
+    fun getFichaMascotaList() : List<FichaMascota> {
         val fichaMascotalist = getFichaMascotaListUsecase.execute()
 
         _uiState.value = MainState(fichaMascotaList = fichaMascotalist)
+        return fichaMascotalist
     }
 
 }

@@ -16,6 +16,7 @@ import com.example.practicarecyclerviewfrancisco.ui.commons.ConstantesUi
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: FichaAdapter
 
     private val viewModel: MainViewModel by viewModels {
         MainViewModelFactory(
@@ -28,18 +29,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
 
-            viewModel.getFichaMascotaList()
+            recyclerFicha.layoutManager = LinearLayoutManager(this@MainActivity)
 
-            viewModel.uiState.observe(this@MainActivity) { state ->
-                val fichaMascotaList = state.fichaMascotaList
-                initRecyclerView(fichaMascotaList)
+            val fichaMascotaList = viewModel.getFichaMascotaList()
+
+            adapter = FichaAdapter(fichaMascotaList, ::onItemSelected)
+
+
+            fichaMascotaList.let {
+                recyclerFicha.layoutManager = LinearLayoutManager(this@MainActivity)
+                recyclerFicha.adapter = adapter
             }
         }
-    }
+        viewModel.uiState.observe(this@MainActivity) { state ->
+            val fichaMascotaList = state.fichaMascotaList
+            adapter.cambiarLista(fichaMascotaList)
+        }
 
-    fun initRecyclerView(fichaMascotaList: List<FichaMascota>) {
-        binding.recyclerFicha.layoutManager = LinearLayoutManager(this)
-        binding.recyclerFicha.adapter = FichaAdapter(fichaMascotaList) { fichaMascota -> onItemSelected(fichaMascota) }
     }
 
     fun onItemSelected(fichaMascota: FichaMascota) {
@@ -52,4 +58,14 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         viewModel.getFichaMascotaList()
     }
+
+    /*fun initRecyclerView(fichaMascotaList: List<FichaMascota>) {
+    binding.recyclerFicha.layoutManager = LinearLayoutManager(this)
+    binding.recyclerFicha.adapter =  }*/
 }
+
+
+
+
+
+
