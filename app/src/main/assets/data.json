@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "nombre": "Leydy",
+    "nombre": "Leydy García",
     "email": "leydy@mail.com",
     "telefono": "87646413",
     "nombre_mascota": "Suzy",
@@ -13,7 +13,7 @@
   },
   {
     "id": 1,
-    "nombre": "Juan",
+    "nombre": "Juan López",
     "email": "juan@mail.com",
     "telefono": "87646413",
     "nombre_mascota": "Max",
@@ -25,7 +25,7 @@
   },
   {
     "id": 2,
-    "nombre": "Pepe",
+    "nombre": "Pepe Rodríguez",
     "email": "pepe@mail.com",
     "telefono": "648325432",
     "nombre_mascota": "Luna",
@@ -37,7 +37,7 @@
   },
   {
     "id": 3,
-    "nombre": "Alejandro",
+    "nombre": "Alejandro Sánchez",
     "email": "ale@mail.com",
     "telefono": "65432101",
     "nombre_mascota": "Simba",
@@ -49,7 +49,7 @@
   },
   {
     "id": 4,
-    "nombre": "Fernando",
+    "nombre": "Fernando Martínez",
     "email": "fer@mail.com",
     "telefono": "796210634",
     "nombre_mascota": "Timon",
@@ -61,7 +61,7 @@
   },
   {
     "id": 5,
-    "nombre": "Ana",
+    "nombre": "Ana González",
     "email": "ana@mail.com",
     "telefono": "123456789",
     "nombre_mascota": "Coco",
@@ -72,7 +72,7 @@
     "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/10/GSD_Puppy.jpg"
   },{
   "id": 6,
-  "nombre": "María",
+  "nombre": "María Pérez",
   "email": "maria@mail.com",
   "telefono": "987654321",
   "nombre_mascota": "Misty",
@@ -84,7 +84,7 @@
 },
   {
     "id": 7,
-    "nombre": "Luis",
+    "nombre": "Luis Fernández",
     "email": "luis@mail.com",
     "telefono": "987654123",
     "nombre_mascota": "Rocky",
@@ -96,7 +96,7 @@
   },
   {
     "id": 8,
-    "nombre": "Isabel",
+    "nombre": "Isabel Torres",
     "email": "isabel@mail.com",
     "telefono": "789123456",
     "nombre_mascota": "Whiskers",
@@ -108,7 +108,7 @@
   },
   {
     "id": 9,
-    "nombre": "Diego",
+    "nombre": "Diego Vargas",
     "email": "diego@mail.com",
     "telefono": "654987321",
     "nombre_mascota": "Buddy",
@@ -120,7 +120,7 @@
   },
   {
     "id": 10,
-    "nombre": "Laura",
+    "nombre": "Laura Morales",
     "email": "laura@mail.com",
     "telefono": "123789456",
     "nombre_mascota": "Fluffy",
@@ -132,7 +132,7 @@
   },
   {
     "id": 11,
-    "nombre": "Carlos",
+    "nombre": "Carlos Ramírez",
     "email": "carlos@mail.com",
     "telefono": "456321789",
     "nombre_mascota": "Maximus",
@@ -144,7 +144,7 @@
   },
   {
     "id": 12,
-    "nombre": "Marcela",
+    "nombre": "Marcela Castillo",
     "email": "marcela@mail.com",
     "telefono": "987654789",
     "nombre_mascota": "Princess",
