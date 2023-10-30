@@ -3,6 +3,7 @@ package com.example.practicarecyclerviewfrancisco.domain.model
 import android.os.Parcelable
 import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize
+import java.time.LocalDate
 
 @Parcelize
 data class FichaMascota(
@@ -18,5 +19,6 @@ data class FichaMascota(
     val esterilizado: Boolean = false,
     val vacunado: Boolean = false,
     val comportamiento: Float = 0.0f,
-    val imagen: String
+    val imagen: String,
+    val fecha: LocalDate
 ): Parcelable

@@ -21,4 +21,5 @@
     <string name="esterilizadoTxt">Esterilizado</string>
     <string name="vacunadoTxt">Vacunado</string>
     <string name="imagen_de_la_mascota">Imagen de la mascota</string>
+    <string name="fecha_de_admision">Fecha de admision</string>
 </resources>

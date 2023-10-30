@@ -9,7 +9,8 @@
     "esterilizado": false,
     "vacunado": true,
     "comportamiento": 5.0,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Berger_blanc_suisse3.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Berger_blanc_suisse3.jpg",
+    "fecha": "2021-06-05"
   },
   {
     "id": 1,
@@ -21,7 +22,8 @@
     "esterilizado": false,
     "vacunado": true,
     "comportamiento": 5.0,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/59/Border_Collie_blanca_y_negra_Cachorra_%28Bimba_de_los_Baganicos%29.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/59/Border_Collie_blanca_y_negra_Cachorra_%28Bimba_de_los_Baganicos%29.jpg",
+    "fecha": "2022-06-14"
   },
   {
     "id": 2,
@@ -33,7 +35,8 @@
     "esterilizado": false,
     "vacunado": false,
     "comportamiento": 2.0,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/82/Cat_Eyes.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/82/Cat_Eyes.jpg",
+    "fecha": "2021-12-06"
   },
   {
     "id": 3,
@@ -45,7 +48,8 @@
     "esterilizado": true,
     "vacunado": true,
     "comportamiento": 8.5,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Gato_Siam%C3%A9s_ojos_azules.JPG"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Gato_Siam%C3%A9s_ojos_azules.JPG",
+    "fecha": "2021-09-19"
   },
   {
     "id": 4,
@@ -57,7 +61,8 @@
     "esterilizado": true,
     "vacunado": true,
     "comportamiento": 8.5,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/69/Berger-des-Pyrenees_Adeux_0565x0404.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/69/Berger-des-Pyrenees_Adeux_0565x0404.jpg",
+    "fecha": "2022-10-22"
   },
   {
     "id": 5,
@@ -69,19 +74,22 @@
     "esterilizado": true,
     "vacunado": true,
     "comportamiento": 7.0,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/10/GSD_Puppy.jpg"
-  },{
-  "id": 6,
-  "nombre": "María Pérez",
-  "email": "maria@mail.com",
-  "telefono": "987654321",
-  "nombre_mascota": "Misty",
-  "tipo_mascota": "Gato",
-  "esterilizado": false,
-  "vacunado": true,
-  "comportamiento": 6.5,
-  "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/25/Russian_blue_cat.jpg"
-},
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/10/GSD_Puppy.jpg",
+    "fecha": "2021-05-08"
+  },
+  {
+    "id": 6,
+    "nombre": "María Pérez",
+    "email": "maria@mail.com",
+    "telefono": "987654321",
+    "nombre_mascota": "Misty",
+    "tipo_mascota": "Gato",
+    "esterilizado": false,
+    "vacunado": true,
+    "comportamiento": 6.5,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/25/Russian_blue_cat.jpg",
+    "fecha": "2021-11-27"
+  },
   {
     "id": 7,
     "nombre": "Luis Fernández",
@@ -92,7 +100,8 @@
     "esterilizado": true,
     "vacunado": false,
     "comportamiento": 4.0,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/67/Rassehund_Briard.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/67/Rassehund_Briard.jpg",
+    "fecha": "2022-03-26"
   },
   {
     "id": 8,
@@ -104,7 +113,8 @@
     "esterilizado": true,
     "vacunado": true,
     "comportamiento": 6.0,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/b/bd/ACL_Pointocurl_Fiorentina.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/b/bd/ACL_Pointocurl_Fiorentina.jpg",
+    "fecha": "2022-07-10"
   },
   {
     "id": 9,
@@ -116,7 +126,8 @@
     "esterilizado": false,
     "vacunado": true,
     "comportamiento": 5.5,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/87/Polski_Owczarek_Podhalanski.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/87/Polski_Owczarek_Podhalanski.jpg",
+    "fecha": "2022-10-08"
   },
   {
     "id": 10,
@@ -128,7 +139,8 @@
     "esterilizado": true,
     "vacunado": false,
     "comportamiento": 4.5,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Turkse_angora.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Turkse_angora.jpg",
+    "fecha": "2022-07-14"
   },
   {
     "id": 11,
@@ -140,7 +152,8 @@
     "esterilizado": true,
     "vacunado": true,
     "comportamiento": 7.5,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Golden_Retriever_9-year_old.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Golden_Retriever_9-year_old.jpg",
+    "fecha": "2021-06-16"
   },
   {
     "id": 12,
@@ -152,6 +165,7 @@
     "esterilizado": false,
     "vacunado": false,
     "comportamiento": 3.5,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Nagec_cat.jpg"
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Nagec_cat.jpg",
+    "fecha": "2022-12-01"
   }
 ]

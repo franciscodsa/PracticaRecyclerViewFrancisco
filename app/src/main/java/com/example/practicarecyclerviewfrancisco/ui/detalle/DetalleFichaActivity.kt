@@ -14,6 +14,7 @@ import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascota
 import com.example.practicarecyclerviewfrancisco.domain.usecases.GetFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.domain.usecases.UpdateFichaMascotaUsecase
 import com.example.practicarecyclerviewfrancisco.ui.commons.ConstantesUi
+import java.time.LocalDate
 
 class DetalleFichaActivity : AppCompatActivity() {
 
@@ -66,6 +67,7 @@ class DetalleFichaActivity : AppCompatActivity() {
                     editTextPhone.setText(state.fichaMascota.telefono)
                     editTextNombreMascota.setText(state.fichaMascota.nombreMascota)
                     sliderComportamiento.value = state.fichaMascota.comportamiento
+                    editTextDate.setText(state.fichaMascota.fecha.toString())
                     checkBoxEsterilizado.isChecked = state.fichaMascota.esterilizado
                     checkBoxVacunado.isChecked = state.fichaMascota.vacunado
 
@@ -110,6 +112,8 @@ class DetalleFichaActivity : AppCompatActivity() {
             val imagen =
                 if (buttonUpdate.isPressed) viewModel.getFichaMascota(getSelectedFichaId()).imagen else ConstantesUi.defaultImage
 
+            val fecha = if (buttonUpdate.isPressed) viewModel.getFichaMascota(getSelectedFichaId()).fecha else LocalDate.now()
+
             return FichaMascota(
                 id,
                 propietario,
@@ -120,7 +124,8 @@ class DetalleFichaActivity : AppCompatActivity() {
                 esterilizado,
                 vacunado,
                 comportamiento,
-                imagen
+                imagen,
+                fecha
             )
         }
 
