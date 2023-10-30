@@ -30,6 +30,11 @@ class FichaAdapter(
         holder.render(fichaMascotaList[position], onClickListener)
     }
 
+    fun cambiarLista(lista: List<FichaMascota>) {
+        fichaMascotaList = lista
+        notifyDataSetChanged()
+    }
+
 }
 
 class FichaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
